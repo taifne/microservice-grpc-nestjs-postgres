@@ -1,0 +1,60 @@
+syntax = "proto3";
+
+// Define the user message
+message User {
+  string id = 1;
+  string username = 2;
+  string email = 3;
+}
+
+// Define the request message for creating a user
+message CreateUserRequest {
+  string username = 1;
+  string email = 2;
+  string password = 3;
+}
+
+// Define the response message for creating a user
+message CreateUserResponse {
+  User user = 1;
+}
+
+// Define the request message for getting a user by ID
+message GetUserRequest {
+  string id = 1;
+}
+
+// Define the response message for getting a user
+message GetUserResponse {
+  User user = 1;
+}
+
+// Define the request message for updating a user
+message UpdateUserRequest {
+  string id = 1;
+  string username = 2;
+  string email = 3;
+}
+
+// Define the response message for updating a user
+message UpdateUserResponse {
+  User user = 1;
+}
+
+// Define the request message for deleting a user
+message DeleteUserRequest {
+  string id = 1;
+}
+
+// Define the response message for deleting a user
+message DeleteUserResponse {
+  string message = 1;
+}
+
+// Define the request message for listing users
+message ListUsersRequest {}
+
+// Define the response message for listing users
+message ListUsersResponse {
+  repeated User users = 1;
+}
